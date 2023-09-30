@@ -14,6 +14,12 @@
 		1613C2E42ABCD98D00468597 /* Project3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C2E32ABCD98D00468597 /* Project3Tests.swift */; };
 		1613C2EE2ABCD98D00468597 /* Project3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C2ED2ABCD98D00468597 /* Project3UITests.swift */; };
 		1613C2F02ABCD98D00468597 /* Project3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C2EF2ABCD98D00468597 /* Project3UITestsLaunchTests.swift */; };
+		1613C2FD2ABCD9B800468597 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1613C2FC2ABCD9B800468597 /* Keys.plist */; };
+		1613C31C2AC8CFB500468597 /* NookipediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C31B2AC8CFB500468597 /* NookipediaService.swift */; };
+		1613C31E2AC8D04500468597 /* VillagersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C31D2AC8D04500468597 /* VillagersListView.swift */; };
+		1613C3232AC8D09800468597 /* ACVillager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3222AC8D09800468597 /* ACVillager.swift */; };
+		1613C3252AC8D48E00468597 /* ACFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3242AC8D48E00468597 /* ACFish.swift */; };
+		1613C3272AC8D7B300468597 /* ACArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3262AC8D7B300468597 /* ACArtwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		1613C2E92ABCD98D00468597 /* Project3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1613C2ED2ABCD98D00468597 /* Project3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project3UITests.swift; sourceTree = "<group>"; };
 		1613C2EF2ABCD98D00468597 /* Project3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1613C2FC2ABCD9B800468597 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		1613C31B2AC8CFB500468597 /* NookipediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookipediaService.swift; sourceTree = "<group>"; };
+		1613C31D2AC8D04500468597 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
+		1613C3222AC8D09800468597 /* ACVillager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACVillager.swift; sourceTree = "<group>"; };
+		1613C3242AC8D48E00468597 /* ACFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACFish.swift; sourceTree = "<group>"; };
+		1613C3262AC8D7B300468597 /* ACArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACArtwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +106,16 @@
 		1613C2D12ABCD98B00468597 /* Project3 */ = {
 			isa = PBXGroup;
 			children = (
+				1613C3212AC8D08E00468597 /* ViewModel */,
+				1613C3202AC8D08B00468597 /* View */,
+				1613C31F2AC8D08700468597 /* Model */,
+				1613C31A2AC8CF9A00468597 /* Service */,
 				1613C2D22ABCD98B00468597 /* Project3App.swift */,
 				1613C2D42ABCD98B00468597 /* ContentView.swift */,
 				1613C2D62ABCD98D00468597 /* Assets.xcassets */,
 				1613C2D82ABCD98D00468597 /* Preview Content */,
+				1613C2FC2ABCD9B800468597 /* Keys.plist */,
+				1613C31D2AC8D04500468597 /* VillagersListView.swift */,
 			);
 			path = Project3;
 			sourceTree = "<group>";
@@ -125,6 +143,38 @@
 				1613C2EF2ABCD98D00468597 /* Project3UITestsLaunchTests.swift */,
 			);
 			path = Project3UITests;
+			sourceTree = "<group>";
+		};
+		1613C31A2AC8CF9A00468597 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1613C31B2AC8CFB500468597 /* NookipediaService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1613C31F2AC8D08700468597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1613C3242AC8D48E00468597 /* ACFish.swift */,
+				1613C3222AC8D09800468597 /* ACVillager.swift */,
+				1613C3262AC8D7B300468597 /* ACArtwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1613C3202AC8D08B00468597 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1613C3212AC8D08E00468597 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1613C2FD2ABCD9B800468597 /* Keys.plist in Resources */,
 				1613C2DA2ABCD98D00468597 /* Preview Assets.xcassets in Resources */,
 				1613C2D72ABCD98D00468597 /* Assets.xcassets in Resources */,
 			);
@@ -258,7 +309,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1613C2D52ABCD98B00468597 /* ContentView.swift in Sources */,
+				1613C31C2AC8CFB500468597 /* NookipediaService.swift in Sources */,
+				1613C3232AC8D09800468597 /* ACVillager.swift in Sources */,
+				1613C31E2AC8D04500468597 /* VillagersListView.swift in Sources */,
+				1613C3272AC8D7B300468597 /* ACArtwork.swift in Sources */,
 				1613C2D32ABCD98B00468597 /* Project3App.swift in Sources */,
+				1613C3252AC8D48E00468597 /* ACFish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
