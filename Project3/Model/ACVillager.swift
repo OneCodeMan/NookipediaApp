@@ -41,6 +41,16 @@ struct ACVillager: Identifiable, Codable {
         case birthdayDay = "birthday_day"
     }
     
+    // MARK: Example data
+    
+    static func example1() -> ACVillager {
+        return ACVillager(name: "Plath", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: .Male, birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+    }
+    
+    static func example2() -> ACVillager {
+        return ACVillager(name: "Tom", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: .Male, birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+    }
+    
 }
 
 enum Gender: Codable {

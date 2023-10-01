@@ -20,6 +20,10 @@
 		1613C3232AC8D09800468597 /* ACVillager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3222AC8D09800468597 /* ACVillager.swift */; };
 		1613C3252AC8D48E00468597 /* ACFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3242AC8D48E00468597 /* ACFish.swift */; };
 		1613C3272AC8D7B300468597 /* ACArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3262AC8D7B300468597 /* ACArtwork.swift */; };
+		1613C3292AC8D9FC00468597 /* ACFurniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C3282AC8D9FC00468597 /* ACFurniture.swift */; };
+		1613C32B2AC9CAF000468597 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C32A2AC9CAF000468597 /* APIError.swift */; };
+		1613C32D2AC9D4B500468597 /* NookipediaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C32C2AC9D4B500468597 /* NookipediaServiceProtocol.swift */; };
+		1613C32F2AC9D7F400468597 /* NookipediaDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1613C32E2AC9D7F400468597 /* NookipediaDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		1613C3222AC8D09800468597 /* ACVillager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACVillager.swift; sourceTree = "<group>"; };
 		1613C3242AC8D48E00468597 /* ACFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACFish.swift; sourceTree = "<group>"; };
 		1613C3262AC8D7B300468597 /* ACArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACArtwork.swift; sourceTree = "<group>"; };
+		1613C3282AC8D9FC00468597 /* ACFurniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACFurniture.swift; sourceTree = "<group>"; };
+		1613C32A2AC9CAF000468597 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1613C32C2AC9D4B500468597 /* NookipediaServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookipediaServiceProtocol.swift; sourceTree = "<group>"; };
+		1613C32E2AC9D7F400468597 /* NookipediaDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookipediaDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				1613C31B2AC8CFB500468597 /* NookipediaService.swift */,
+				1613C32C2AC9D4B500468597 /* NookipediaServiceProtocol.swift */,
+				1613C32E2AC9D7F400468597 /* NookipediaDataFetcher.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -158,7 +168,9 @@
 			children = (
 				1613C3242AC8D48E00468597 /* ACFish.swift */,
 				1613C3222AC8D09800468597 /* ACVillager.swift */,
+				1613C3282AC8D9FC00468597 /* ACFurniture.swift */,
 				1613C3262AC8D7B300468597 /* ACArtwork.swift */,
+				1613C32A2AC9CAF000468597 /* APIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,11 +322,15 @@
 			files = (
 				1613C2D52ABCD98B00468597 /* ContentView.swift in Sources */,
 				1613C31C2AC8CFB500468597 /* NookipediaService.swift in Sources */,
+				1613C32D2AC9D4B500468597 /* NookipediaServiceProtocol.swift in Sources */,
 				1613C3232AC8D09800468597 /* ACVillager.swift in Sources */,
 				1613C31E2AC8D04500468597 /* VillagersListView.swift in Sources */,
+				1613C3292AC8D9FC00468597 /* ACFurniture.swift in Sources */,
 				1613C3272AC8D7B300468597 /* ACArtwork.swift in Sources */,
 				1613C2D32ABCD98B00468597 /* Project3App.swift in Sources */,
 				1613C3252AC8D48E00468597 /* ACFish.swift in Sources */,
+				1613C32B2AC9CAF000468597 /* APIError.swift in Sources */,
+				1613C32F2AC9D7F400468597 /* NookipediaDataFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
