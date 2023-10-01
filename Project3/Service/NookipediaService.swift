@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct NookipediaService: NookipediaServiceProtocol {
-    var NOOKIPEDIA_API_KEY = ""
+    var NOOKIPEDIA_API_KEY: String = ""
     
     init() {
-        self.NOOKIPEDIA_API_KEY = "?api_key=\(getAPIKey())"
+        if NOOKIPEDIA_API_KEY.isEmpty {
+            self.NOOKIPEDIA_API_KEY = "?api_key=\(getAPIKey())"
+        }
     }
     
     // MARK: Fetching data

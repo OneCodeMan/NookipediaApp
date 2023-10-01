@@ -27,6 +27,7 @@ class NookipediaDataFetcher: ObservableObject {
     
     init(service: NookipediaServiceProtocol = NookipediaService()) {
         self.service = service
+        fetchAllVillagers()
     }
     
     // MARK: API calls
@@ -35,7 +36,7 @@ class NookipediaDataFetcher: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        let url = URL(string: "\(BASE_URL)/villagers/\(service.NOOKIPEDIA_API_KEY)")
+        let url = URL(string: "\(BASE_URL)villagers")
         service.fetchVillagers(url: url) { [unowned self] result in
             
             DispatchQueue.main.async {

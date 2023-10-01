@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var nookipediaDataFetcher = NookipediaDataFetcher()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        if nookipediaDataFetcher.isLoading {
+            ProgressView() // TODO: Make custom
+        } else if nookipediaDataFetcher.errorMessage != nil {
+            Text("Error: \(nookipediaDataFetcher.errorMessage ?? "")") // TODO: Make custom
+        } else {
+            Text("Success")
         }
-        .padding()
     }
 }
 

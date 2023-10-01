@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct ACVillager: Identifiable, Codable {
+struct ACVillager: CustomStringConvertible, Identifiable, Codable {
 
-    let id = UUID()
+    // MARK: Properties
+    var id = UUID()
     
     let name: String
     let url: String
@@ -18,7 +19,7 @@ struct ACVillager: Identifiable, Codable {
     let imageURL: String
     let species: String
     let personality: String
-    let gender: Gender
+    let gender: String
     let birthdayMonth: String
     let birthdayDay: String
     let sign: String
@@ -30,6 +31,12 @@ struct ACVillager: Identifiable, Codable {
     let appearances: [String]
     let prevPhrases: [String]
     
+    // MARK: Info
+    var description: String {
+        return "Villager with name \(name). \n Species: \(species)\n Personality: \(personality)"
+    }
+    
+    // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case id, name, url, species, personality, gender
         case sign, quote, phrase, clothing, islander, debut, appearances
@@ -44,11 +51,11 @@ struct ACVillager: Identifiable, Codable {
     // MARK: Example data
     
     static func example1() -> ACVillager {
-        return ACVillager(name: "Plath", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: .Male, birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+        return ACVillager(name: "Plath", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Male", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
     }
     
     static func example2() -> ACVillager {
-        return ACVillager(name: "Tom", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: .Male, birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+        return ACVillager(name: "Tom", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Female", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
     }
     
 }
