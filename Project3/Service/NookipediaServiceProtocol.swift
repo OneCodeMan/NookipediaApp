@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 protocol NookipediaServiceProtocol {
-    var NOOKIPEDIA_API_KEY: String { get }
-    func fetchVillagers(url: URL?, completion: @escaping(Result<[ACVillager], APIError>) -> Void)
+    associatedtype EndpointType: APIEndpoint
+    func request<T: Decodable>(_ endpoint: EndpointType) -> AnyPublisher<T, Error>
 }

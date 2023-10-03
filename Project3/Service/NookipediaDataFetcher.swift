@@ -11,68 +11,34 @@
 
 import Foundation
 import UIKit
+import Combine
 
-class NookipediaDataFetcher: ObservableObject {
-    let BASE_URL = "https://api.nookipedia.com/"
+protocol NookipediaDataFetcherProtocol {
+    func getVillagers() -> AnyPublisher<[ACVillager], Error>
+    func getFish() -> AnyPublisher<[ACFish], Error>
+    func getFurniture() -> AnyPublisher<[ACFurniture], Error>
+    func getArtwork() -> AnyPublisher<[ACArtwork], Error>
+}
+
+class NookipediaDataFetcher: NookipediaDataFetcherProtocol {
+    let apiClient = NookipediaService<ItemEndpoint>()
     
-    @Published var villagers = [ACVillager]()
-    @Published var fish = [ACFish]()
-    @Published var furniture = [ACFurniture]()
-    @Published var artwork = [ACArtwork]()
-    
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String? = nil
-    
-    let service: NookipediaServiceProtocol
-    
-    init(service: NookipediaServiceProtocol = NookipediaService()) {
-        self.service = service
-        fetchAllVillagers()
+    func getVillagers() -> AnyPublisher<[ACVillager], Error> {
+        return apiClient.request(.getVillagers)
     }
     
-    // MARK: API calls
-    // TODO: there's a pattern here, fix this.
-    func fetchAllVillagers() {
-        isLoading = true
-        errorMessage = nil
-        
-        let urlString = "\(BASE_URL)villagers"
-        let url = URL(string: urlString)
-        service.fetchVillagers(url: url) { [unowned self] result in
-            
-            DispatchQueue.main.async {
-                self.isLoading = false
-                switch result {
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                case .success(let villagers):
-                    print("Success with villagers: \(villagers.count) of 'em")
-                    self.villagers = villagers
-                }
-            }
-            
-        }
+    func getFish() -> AnyPublisher<[ACFish], Error> {
+        return apiClient.request(.getFish)
     }
     
-    func fetchAllFurniture() {
-        
+    func getFurniture() -> AnyPublisher<[ACFurniture], Error> {
+        return apiClient.request(.getFurniture)
     }
     
-    func fetchAllArtwork() {
-        
+    func getArtwork() -> AnyPublisher<[ACArtwork], Error> {
+        return apiClient.request(.getArtwork)
     }
     
-    // MARK: For preview
     
-    static func errorStateForPreview() -> NookipediaDataFetcher {
-        let fetcher = NookipediaDataFetcher()
-        fetcher.errorMessage = APIError.url(URLError.init(.notConnectedToInternet)).localizedDescription
-        return fetcher
-    }
     
-    static func successStateForPreview() -> NookipediaDataFetcher {
-        let fetcher = NookipediaDataFetcher()
-        fetcher.villagers = []
-        return fetcher
-    }
 }

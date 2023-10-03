@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var nookipediaDataFetcher = NookipediaDataFetcher()
+    // CONVERT TO COORDINATOR PATTERN
+    @StateObject var nookipediaViewModel = NookipediaViewModel(nookipediaDataFetcher: NookipediaDataFetcher())
     
     var body: some View {
         
-        if nookipediaDataFetcher.isLoading {
+        if nookipediaViewModel.isLoading {
             ProgressView() // TODO: Make custom
-        } else if nookipediaDataFetcher.errorMessage != nil {
-            Text("Error: \(nookipediaDataFetcher.errorMessage ?? "")") // TODO: Make custom
+        } else if nookipediaViewModel.errorMessage != nil {
+            Text("Error: \(nookipediaViewModel.errorMessage ?? "")") // TODO: Make custom
         } else {
             Text("Success")
         }
