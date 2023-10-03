@@ -36,7 +36,8 @@ class NookipediaDataFetcher: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        let url = URL(string: "\(BASE_URL)villagers")
+        let urlString = "\(BASE_URL)villagers"
+        let url = URL(string: urlString)
         service.fetchVillagers(url: url) { [unowned self] result in
             
             DispatchQueue.main.async {

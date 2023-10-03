@@ -10,7 +10,7 @@ import Foundation
 struct ACVillager: CustomStringConvertible, Identifiable, Codable {
 
     // MARK: Properties
-    var id = UUID()
+    var id: String
     
     let name: String
     let url: String
@@ -19,7 +19,7 @@ struct ACVillager: CustomStringConvertible, Identifiable, Codable {
     let imageURL: String
     let species: String
     let personality: String
-    let gender: String
+    let gender: Gender
     let birthdayMonth: String
     let birthdayDay: String
     let sign: String
@@ -32,11 +32,13 @@ struct ACVillager: CustomStringConvertible, Identifiable, Codable {
     let prevPhrases: [String]
     
     // MARK: Info
+
     var description: String {
         return "Villager with name \(name). \n Species: \(species)\n Personality: \(personality)"
     }
     
     // MARK: CodingKeys
+
     enum CodingKeys: String, CodingKey {
         case id, name, url, species, personality, gender
         case sign, quote, phrase, clothing, islander, debut, appearances
@@ -48,20 +50,47 @@ struct ACVillager: CustomStringConvertible, Identifiable, Codable {
         case birthdayDay = "birthday_day"
     }
     
+    // MARK: Initializer
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.url = try container.decode(String.self, forKey: .url)
+        self.species = try container.decode(String.self, forKey: .species)
+        self.personality = try container.decode(String.self, forKey: .personality)
+        self.gender = try container.decode(Gender.self, forKey: .gender)
+        self.sign = try container.decode(String.self, forKey: .sign)
+        self.quote = try container.decode(String.self, forKey: .quote)
+        self.phrase = try container.decode(String.self, forKey: .phrase)
+        self.clothing = try container.decode(String.self, forKey: .clothing)
+        self.islander = try container.decode(Bool.self, forKey: .islander)
+        self.debut = try container.decode(String.self, forKey: .debut)
+        self.appearances = try container.decode([String].self, forKey: .appearances)
+        self.titleColor = try container.decode(String.self, forKey: .titleColor)
+        self.textColor = try container.decode(String.self, forKey: .textColor)
+        self.imageURL = try container.decode(String.self, forKey: .imageURL)
+        self.prevPhrases = try container.decode([String].self, forKey: .prevPhrases)
+        self.birthdayMonth = try container.decode(String.self, forKey: .birthdayMonth)
+        self.birthdayDay = try container.decode(String.self, forKey: .birthdayDay)
+    }
+    
+    
+    
     // MARK: Example data
     
-    static func example1() -> ACVillager {
-        return ACVillager(name: "Plath", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Male", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
-    }
-    
-    static func example2() -> ACVillager {
-        return ACVillager(name: "Tom", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Female", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
-    }
+//    static func example1() -> ACVillager {
+//        return ACVillager(name: "Plath", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Male", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+//    }
+//    
+//    static func example2() -> ACVillager {
+//        return ACVillager(name: "Tom", url: "google.com", titleColor: "", textColor: "", imageURL: "", species: "", personality: "", gender: "Female", birthdayMonth: "", birthdayDay: "", sign: "", quote: "", phrase: "", clothing: "", islander: true, debut: "", appearances: [""], prevPhrases: [""])
+//    }
     
 }
 
-enum Gender: Codable {
-    case Male
-    case Female
+enum Gender: String, Codable {
+    case Male = "Male"
+    case Female = "Female"
     case Other
 }

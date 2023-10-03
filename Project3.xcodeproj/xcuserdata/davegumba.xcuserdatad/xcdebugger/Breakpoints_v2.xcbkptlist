@@ -7,69 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C59443F5-611B-4EEE-96AB-684AADC90772"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Project3/Service/NookipediaService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "fetch(_:url:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C59443F5-611B-4EEE-96AB-684AADC90772 - 3029ead2ea6f5bce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Project3.NookipediaService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: &#x3c4;_0_0.Type, url: Swift.Optional&lt;Foundation.URL&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Project3.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Project3"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davegumba/workspace/%5Bprojects%5D/Project3/Project3/Service/NookipediaService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "844">
-               </Location>
-               <Location
-                  uuid = "C59443F5-611B-4EEE-96AB-684AADC90772 - 3029ead2ea6f5bce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Project3.NookipediaService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: &#x3c4;_0_0.Type, url: Swift.Optional&lt;Foundation.URL&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Project3.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Project3"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davegumba/workspace/%5Bprojects%5D/Project3/Project3/Service/NookipediaService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "1276">
-               </Location>
-               <Location
-                  uuid = "C59443F5-611B-4EEE-96AB-684AADC90772 - 3029ead2ea6f5bce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Project3.NookipediaService.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: &#x3c4;_0_0.Type, url: Swift.Optional&lt;Foundation.URL&gt;, completion: (Swift.Result&lt;&#x3c4;_0_0, Project3.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Project3"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davegumba/workspace/%5Bprojects%5D/Project3/Project3/Service/NookipediaService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "1268">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "82D3E24A-9E5B-40E7-BBD2-5B29A1B8904B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
