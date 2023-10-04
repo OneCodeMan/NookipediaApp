@@ -14,6 +14,9 @@ class NookipediaViewModel: ObservableObject {
     
     // MARK: Data
     @Published var villagers: [ACVillager] = []
+    @Published var fish: [ACFish] = []
+    @Published var furniture: [ACFurniture] = []
+    @Published var artwork: [ACArtwork] = []
     
     // MARK: State
     @Published var isLoading = false
@@ -24,6 +27,7 @@ class NookipediaViewModel: ObservableObject {
         fetchVillagers()
     }
     
+    // FIXME: DRY
     func fetchVillagers() {
         nookipediaDataFetcher.getVillagers()
             .receive(on: RunLoop.main)
@@ -31,6 +35,36 @@ class NookipediaViewModel: ObservableObject {
                 
             }, receiveValue: { [weak self] data in
                 self?.villagers = data
+            }).store(in: &cancellables)
+    }
+    
+    func fetchFish() {
+        nookipediaDataFetcher.getFish()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { data in
+    
+            }, receiveValue: { [weak self] data in
+                self?.fish = data
+            }).store(in: &cancellables)
+    }
+    
+    func fetchFurniture() {
+        nookipediaDataFetcher.getFurniture()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { data in
+    
+            }, receiveValue: { [weak self] data in
+                self?.furniture = data
+            }).store(in: &cancellables)
+    }
+    
+    func fetchArtwork() {
+        nookipediaDataFetcher.getArtwork()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { data in
+    
+            }, receiveValue: { [weak self] data in
+                self?.artwork = data
             }).store(in: &cancellables)
     }
 }

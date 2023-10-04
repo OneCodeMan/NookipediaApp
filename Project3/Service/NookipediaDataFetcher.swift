@@ -38,7 +38,4 @@ class NookipediaDataFetcher: NookipediaDataFetcherProtocol {
     func getArtwork() -> AnyPublisher<[ACArtwork], Error> {
         return apiClient.request(.getArtwork)
     }
-    
-    
-    
 }
