@@ -35,6 +35,7 @@ class NookipediaViewModel: ObservableObject {
                 
             }, receiveValue: { [weak self] data in
                 self?.villagers = data
+                print("Got villagers, \(self?.villagers.count) of 'em")
             }).store(in: &cancellables)
     }
     
@@ -45,6 +46,7 @@ class NookipediaViewModel: ObservableObject {
     
             }, receiveValue: { [weak self] data in
                 self?.fish = data
+                print("Got fish, \(self?.fish.count) of 'em")
             }).store(in: &cancellables)
     }
     
@@ -55,6 +57,7 @@ class NookipediaViewModel: ObservableObject {
     
             }, receiveValue: { [weak self] data in
                 self?.furniture = data
+                print("Got furniture, \(self?.furniture.count) of 'em")
             }).store(in: &cancellables)
     }
     
@@ -65,6 +68,7 @@ class NookipediaViewModel: ObservableObject {
     
             }, receiveValue: { [weak self] data in
                 self?.artwork = data
+                print("Got artwork, \(self?.artwork.count) of 'em")
             }).store(in: &cancellables)
     }
 }
